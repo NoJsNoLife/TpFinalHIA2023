@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/nicoleestilos.css}" />
+	<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css}" />
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/nicoleestilos.css}" />
+	<meta charset="UTF-8">
+
+	<title>Turista</title>
+
+</head>
+
+<body class="body-home">
+	<div class="container">
+		<div class="reg-box">
+			<h1>Registrarse</h1>
+			<form id="formTurista" th:object="${unTurista}"
+				th:action="${editMode}?@{/turista/modificar}:@{/turista/guardar}" method="post">
+				
+				<input class="form-control" type=hidden th:field="*{idTurista}" th:if="${editMode}">
+						
+			
+				<div class="form-group row">
+					<label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+						<input type="text" id="nombre" th:field="*{nombre}" class="form-control">
+				</div>
+
+				<div class="form-group row">
+					<label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
+						<input type="text" id="apellido" th:field="*{apellido}" class="form-control">
+				</div>
+
+				<div class="form-group row">
+					<label for="país" class="col-sm-2 col-form-label">País</label>
+						<select id="país" th:field="*{país}" class="form-control">
+							<option value="Afganistán">Afganistán</option>
+							<option value="Akrotiri">Akrotiri</option>
+							<option value="Albania"> Albania</option>
+							<option value="Alemania"> Alemania</option>
+							<option value="Andorra"> Andorra</option>
+							<option value="Argentina"> Argentina</option>
+							<option value="Armenia"> Armenia</option>
+							<option value="Australia">Australia</option>
+							<option value="Bahamas"> Bahamas</option>
+							<option value="Bangladesh"> Bangladesh</option>
+							<option value="Bolivia"> Bolivia</option>
+							<option value="Brasil"> Brasil</option>
+							<option value="Canadá"> Canadá</option>
+							<option value="Chile"> Chile</option>
+							<option value="China"> China</option>
+							<option value="Colombia"> Colombia</option>
+							<option value="Costa Rica"> Costa Rica</option>
+							<option value="Cuba"> Cuba</option>
+							<option value="Dinamarca"> Dinamarca</option>
+							<option value="Ecuador"> Ecuador</option>
+							<option value="Egipto"> Egipto</option>
+							<option value="España"> España</option>
+							<option value="Estados Unidos"> Estados Unidos</option>
+							<option value="Finlandia"> Finlandia</option>
+							<option value="Francia"> Francia</option>
+							<option value="Grecia"> Grecia</option>
+							<option value="España"> España</option>
+							<option value="Groenlandia"> Groenlandia</option>
+							<option value="Guatemala"> Guatemala</option>
+							<option value="Honduras"> Honduras</option>
+							<option value="Hong Kong"> Hong Kong</option>
+							<option value="Irlanda"> Irlanda</option>
+							<option value="Italia"> Italia</option>
+							<option value="Jamaica"> Jamaica</option>
+							<option value="Japón"> Japón</option>
+							<option value="Kazajistán"> Kazajistán</option>
+							<option value="Kirguizistán"> Kirguizistán</option>
+							<option value="Libia"> Libia</option>
+							<option value="Luxemburgo"> Luxemburgo</option>
+							<option value="Malasia"> Malasia</option>
+							<option value="Malaui"> Malaui</option>
+							<option value="Maldivas"> Maldivas</option>
+							<option value="Marruecos"> Marruecos</option>
+							<option value="México"> México</option>
+							<option value="Nicaragua"> Nicaragua</option>
+							<option value="Noruega"> Noruega</option>
+							<option value="Nueva Zelanda"> Nueva Zelanda</option>
+							<option value="Paraguay"> Paraguay</option>
+							<option value="Perú"> Perú</option>
+							<option value="Puerto Rico"> Puerto Rico</option>
+							<option value="Reino Unido"> Reino Unido</option>
+							<option value="Rusia"> Rusia</option>
+							<option value="Singapur"> Singapur</option>
+							<option value="Suecia"> Suecia</option>
+							<option value="Suiza"> Suiza</option>
+							<option value="Tailandia"> Tailandia</option>
+							<option value="Taiwán"> Taiwán</option>
+							<option value="Turquía"> Turquía</option>
+							<option value="Ucrania"> Ucrania</option>
+							<option value="Uruguay"> Uruguay</option>
+							<option value="Venezuela"> Venezuela</option>
+							<option value="Vietnam"> Vietnam</option>
+							<option value="Yemen"> Yemen</option>
+						</select>
+				</div>
+
+
+				<div class="form-group row">
+					<label for="latitud" class="col-sm-2 col-form-label">Latitud</label>
+						<input type="number" th:field="*{localizacionLatitud}" class="form-control" id="latitud">
+				</div>
+
+				<div class="form-group row">
+					<label for="longitud" class="col-sm-2 col-form-label">Longitud</label>
+						<input type="number" th:field="*{localizacionLongitud}" class="form-control" id="longitud">
+				</div>
+				<input class="form-control" type=hidden th:field="*{email}" th:if="${editMode}">
+				<input class="form-control" type=hidden th:field="*{password}" th:if="${editMode}">
+
+				<input type="submit" class="btn btn-success btn-block"
+					th:value="${editMode}?'Modificar Turista'">
+				<br>
+				<br>
+		</form>
+				<!-- ---------------------------------------------------------------- -->
+
+
+		</div>
+	</div>
+
+	<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript"
+		src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript"
+		src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript"
+		src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

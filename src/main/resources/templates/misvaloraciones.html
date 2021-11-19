@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/mpoi.css}" />
+	<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/nicoleestilos.css}" />
+</head>
+<body class="body-homem">
+<div th:insert="layouts/header :: header" ></div>
+	<h2 class="titulos">Mis valoraciones</h2>
+	<div class="form-group row" th:each="v : ${valoraciones}">
+	
+	<div class="col-sm-2">
+		</div>
+		<div class="col-sm-8">
+			<div class="card mb-3" id="carta">
+
+				<div class="card-body">
+
+					<p class="card-title" th:text="'nombre del punto de interes: '+${v.poiCreador.nombre}">nombre</p>
+
+					<p class="card-title" th:text="'comentario: '+${v.comentario}">comentario</p>
+					<p class="card-text" th:text="'valoracion: '+${v.unaValoracion}" >valoracion</p>
+					<p class="card-text" th:text="'fecha de creacion : '+${v.fechaComentario}+' '+${v.horaComentario}">fecha de comentario</p>
+					<!-- <a id="button" th:onclick="'javascript:confirmarEliminar(\''+${v.idValoracion}+'\');'"> Eliminar</a> -->
+
+					<a id="button" th:onclick="'javascript:confirmarEliminar(\''+${v.idValoracion}+'\');'"> Eliminar</a>		
+					
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="eliminarModal"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="eliminarModalTitulo">Confirmar Eliminar</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h6>¿Esta seguro de eliminar esta Valoracion?</h6>
+				</div>
+				<input type="hidden" id="identificadorUsuarioHiddenInput" name="userIdHiddenInput" />
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+					
+					<button type="button" class="btn btn-primary" th:onclick="eliminarval()">Eliminar Valoracion</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		function confirmarEliminar(idValoracion) {
+			$('#modalEliminar').modal('show');
+			$("#identificadorUsuarioHiddenInput").val(idValoracion);
+		}
+
+		function eliminarval() {
+			var idValoracion = $("#identificadorUsuarioHiddenInput").val();
+			window.location = "/valoracion/eliminar/" + idValoracion;
+		}
+	</script>
+	
+
+</body>
+<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript"
+		src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript"
+		src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript"
+		src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</html>

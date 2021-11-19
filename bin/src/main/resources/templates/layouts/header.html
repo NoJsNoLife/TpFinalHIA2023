@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+<html>
+
+<body>
+	<div id="header" th:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="https://es.wikipedia.org/wiki/Provincia_de_Jujuy">JUJUY</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="/home"><span class="fas fa-home"></span>Inicio</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="/punto"><span class="fas fa-archive"></span>Puntos de intereses de la comunidad</a>
+					</li>
+					
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-star">
+							</span>Valoraciones
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="/mis/valoraciones">Mis valoraciones</a>
+							</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-mountain">
+							</span>Puntos de Interes
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="/mis/pois">Mis Puntos de Interes</a>
+							<a class="dropdown-item" href="/cargar/poi">Cargar un Punto de Interes</a>
+							</div>
+					</li>
+					
+					<li class="nav-item active">
+						<a class="nav-link" href="/canjear/puntos"><span class="fas fa-gift"></span>Canjear puntos</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-user">
+							</span>Perfil
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							
+							<a class="dropdown-item" href="/turista/perfil">Editar mi perfil</a>
+							<a class="dropdown-item" href="/index" th:href="@{/logout}">Salir</a>
+							</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</body>
+
+</html>

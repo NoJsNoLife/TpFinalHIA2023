@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<link th:rel="stylesheet" type="text/css" th:href="@{/css/mpoi.css}" />
+<link th:rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+<link th:rel="stylesheet"
+	th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
+<link th:rel="stylesheet" type="text/css"
+	th:href="@{/css/nicoleestilos.css}" />
+
+</head>
+
+<body class="body-homemm">
+	<div th:insert="layouts/header :: header" ></div>
+	<h2>Valoraciones hechas por los usuarios</h2>
+	<div class="form-group row" th:each="v :${valoracion}">
+s
+	<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			<div class="card mb-3" id="carta">
+
+				<div class="card-body">
+				<p class="card-title" th:text="'nombre del punto de interes: '+${v.poiCreador.nombre}">nombre</p>
+					<p class="card-title" th:text="'comentario: '+${v.comentario}">comentario</p>
+					<p class="card-text" th:text="'valoracion: '+${v.unaValoracion}">valoracion</p>
+					<p class="card-text" th:text="'email del creador : '+${v.email}">email</p>
+					<p class="card-text" th:text="'fecha de creacion : '+${v.fechaComentario}+' '+${v.horaComentario}">fecha de comentario</p>
+                
+				</div>
+			</div>
+
+		</div>
+		</div>
+</body>
+<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript"
+		src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript"
+		src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript"
+		src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</html>

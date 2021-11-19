@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/nicoleestilos.css}" />
+	<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css}" />
+	<meta charset="UTF-8">
+
+	<title>Log In</title>
+</head>
+
+<body class="body-index">
+<div th:insert="layouts/header2 :: header2"></div>
+	<div class="container">
+		<div class="login-box">
+		
+		<form class="login" th:action="@{/login}"	method="post">
+
+				<div class="app-title">
+					<h1>Log In</h1>
+				</div>
+
+					<!-- USUARIO -->
+					<label for="username">Usuario</label>
+					<input type="text" name="correo" placeholder="Ingrese correo">
+
+					<!-- CONTRASEÑA -->
+					<label for="password">Contraseña</label>
+					<input type="password" name="password" placeholder="Ingrese contraseña">
+					<br class="boton">
+					<input type="submit" class="btn btn-primary" value="Ingresar">
+					
+					<br>
+					<a href="#" class="button"><span class="fab fa-facebook-square"></span>Facebook</a>
+					<a href="#" class="button2"><span class="fab fa-google-plus-square"></span>Google</a>
+					<br>
+					<a href="#" th:href="@{/turista/mostrar}" >No tienes una cuenta?</a>
+					
+				</form>
+				
+				<div th:if="${param.error}" class="alert alert-danger" role="alert">Combinación Invalida de Usuario y Contraseña</div>
+				<div th:if="${param.logout}" class="alert alert-success" role="alert">Ha salido del Sistema. Gracias!</div>
+
+		</div>
+	</div>
+
+	<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript"
+		src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript"
+		src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript"
+		src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

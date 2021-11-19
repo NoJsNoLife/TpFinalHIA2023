@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/poi.css}" />
+	<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/nicoleestilos.css}" />
+</head>
+
+<body class="body-home">
+
+<nav th:insert="layouts/header :: header"></nav>
+  <div class="poi-box">
+	<h1 class="titulos" th:if="${!editMode}">Agregar Punto de Interes</h1>
+	<h1 class="titulos" th:if="${editMode}">Modificar Punto de interes</h1>
+
+	<form id="formPoI" th:object="${poi}" th:action="	${editMode}?@{/poi/modificar}:@{/poi/guardar}" method="post"
+		enctype="multipart/form-data">
+		<input type="hidden" id="identificadorPoi" th:field="*{codPoI}" />
+
+
+		<div class="form-group row">
+			<label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+			<input type="text" id="nom" th:field="*{nombre}" class="form-control col-sm-2">
+			<div class="alert alert-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error</div>
+		</div>
+		<div class="form-group row">
+			<label for="sitw" class="col-sm-2 col-form-label">Sitio Web</label>
+			<input type="url" id="sitw" th:field="*{sitio_web}" class="form-control col-sm-2">
+		</div>
+		<div class="form-group row">
+			<label for="descrip" class="col-sm-2 col-form-label">Descripcion</label>
+			<textarea type="text" id="descrip" th:field="*{descripcion}" cols="50" rows="5"
+				class="col-form-label"></textarea>
+				<div class="alert alert-danger" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}">Error</div>
+		</div>
+
+
+		<div class="form-group row">
+			<label for="file" class="col-sm-2 col-form-label">
+				<i class="fas fa-file-image"></i>Subir Imagen</label>
+			<div class="col-sm-4">
+				<input type="file" name="file" class="form-control-file" id="file"
+					accept="image/x-png,image/gif,image/jpeg,image/png,image/jpeg" onchange="loadFile(event)">
+
+
+				<img id="output" style="padding-top: 2px; width: 146px;" />
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="file1" class="col-sm-2 col-form-label">
+				<i class="fas fa-file-image"></i>Subir Imagen 2</label>
+			<div class="col-sm-4">
+				<input type="file" name="file1" class="form-control-file" id="file1"
+					accept="image/x-png,image/gif,image/jpeg,image/png,image/jpeg" onchange="loadFile1(event)">
+				<img id="output" style="padding-top: 2px; width: 146px;" />
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label for="file2" class="col-sm-2 col-form-label">
+				<i class="fas fa-file-image"></i>Subir Imagen 3 </label>
+			<div class="col-sm-4">
+				<input type="file" name="file2" class="form-control-file" id="file2"
+					accept="image/x-png,image/gif,image/jpeg,image/png,image/jpeg" onchange="loadFile2(event)">
+				<img id="output" style="padding-top: 2px; width: 146px;" />
+			</div>
+
+		</div>
+
+
+
+
+
+		<div class="form-group row">
+			<label for="etiqueta" class="col-sm-2 col-form-label">Etiquetas</label>
+			<select id="tipo" th:field="*{etiqueta}">
+				<option value="cultura">cultura</option>
+				<option value="naturaleza ">naturaleza</option>
+				<option value="aventura ">aventura</option>
+				<option value="deportivo">deportivo</option>
+				<option value="gastronomía ">gastronomía</option>
+
+			</select>
+		</div>
+
+		<div class="accordion" id="accordionExample">
+			<a class=" ub btn btn-primary " data-toggle="collapse" href="#multiCollapseExample1" role="button"
+				aria-expanded="true" aria-controls="multiCollapseExample1">Ubicacion</a>
+			<div class="collapse multi-collapse acor" id="multiCollapseExample1">
+				<div class="form-group row acor">
+					<label for="lat" class="col-sm-1 col-form-label">Latitud (Nº)</label>
+					<input type="number" id="lat" th:field="*{localizacionLatitud}" class="form-control col-sm-2">
+					<div class="alert alert-danger" th:if="${#fields.hasErrors('localizacionLatitud')}" th:errors="*{localizacionLatitud}">Error</div>
+					<label for="long" class="col-sm-1 col-form-label">Longitud (Nº)</label>
+					<input type="number" id="long" th:field="*{localizacionLongitud}" class="form-control col-sm-2">
+					<div class="alert alert-danger" th:if="${#fields.hasErrors('localizacionLongitud')}" th:errors="*{localizacionLongitud}">Error</div>
+				</div>
+				<div class="form-group row">
+					<label for="lat" class="col-sm-1 col-form-label">Localidad</label>
+					<select id="localidad" th:field="*{localidad}" class="form-control col-sm-2">
+						<option value=" San Salvador de Jujuy "> San Salvador de Jujuy</option>
+						<option value="San Pedro de Jujuy ">San Pedro de Jujuy</option>
+						<option value="Palpalá ">Palpalá</option>
+						<option value="Perico ">Perico</option>
+						<option value="Libertador General San Martín ">Libertador General San Martín</option>
+						<option value="Monterrico">Monterrico</option>
+						<option value="La Quiaca ">La Quiaca</option>
+						<option value="El Carmen ">El Carmen</option>
+						<option value="Fraile Pintado ">Fraile Pintado</option>
+						<option value="Humahuaca,">Humahuaca</option>
+						<option value="Abra Pampa">Abra Pampa</option>
+						<option value="Yuto">Yuto</option>
+						<option value="Calilegua">Calilegua</option>
+						<option value="Tilcara">Tilcara</option>
+						<option value=" Caimancito "> Caimancito</option>
+						<option value="Santa Clara ">Santa Clara</option>
+						<option value="Palma Sola">Palma Sola</option>
+						<option value="Yala">Yala</option>
+						<option value=" La Esperanza,"> La Esperanza,</option>
+						<option value=" San Antonio "> San Antonio</option>
+						<option value="Puesto Viejo ">Puesto Viejo</option>
+						<option value="La Mendieta">La Mendieta</option>
+						<option value="Maimar,">Maimará</option>
+						<option value="Aguas Calientes">Aguas Calientes</option>
+						<option value="  Rodeíto "> Rodeíto</option>
+						<option value="Pampa Blanca">Pampa Blanca</option>
+						<option value="El Talar">El Talar</option>
+						<option value=" El Piquete"> El Piquete</option>
+						<option value="El Aguilar">El Aguilar</option>
+						<option value="Purmamarca">Purmamarca</option>
+						<option value=" Huacalera "> Huacalera</option>
+						<option value="Rosario del Río Grande">Rosario del Río Grande</option>
+						<option value="Santa Catalina">Santa Catalina</option>
+						<option value="Volcán">Volcán</option>
+						<option value=" Abdón Castro Tolay"> Abdón Castro Tolay</option>
+						<option value=" Vinalito"> Vinalito</option>
+						<option value=" Mina Pirquitas">Mina Pirquitas</option>
+						<option value=" Cusi Cusi"> Cusi Cusi</option>
+						<option value="Arrayanal">Arrayanal</option>
+						<option value="Pumahuasi.">Pumahuasi</option>
+
+
+					</select>
+					<label for="long" class="col-sm-1 col-form-label">Barrio</label>
+					<input type="text" id="long" th:field="*{barrio}" class="form-control col-sm-2">
+					<label for="numc" class="col-sm-1 col-form-label">Numero Casa</label>
+					<input type="text" id="numc" th:field="*{numeroCasa}" class="form-control col-sm-1">
+					<label for="calle" class="col-sm-1 col-form-label">Calle</label>
+					<input type="text" id="calle" th:field="*{calle}" class="form-control col-sm-2">
+				</div>
+			</div>
+		</div>
+		<div>
+			<input type="submit" th:value="${editMode}?'Modificar Cliente':'Crear poi'">
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	</form>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+	<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript"
+		src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript"
+		src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript"
+		src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

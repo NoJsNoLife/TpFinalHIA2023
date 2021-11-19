@@ -1,0 +1,257 @@
+.body-home{
+  font-family: "Open Sans", sans-serif;
+  background: -webkit-linear-gradient(#8a262b, #e39d57);
+
+}
+.body-homem{
+  font-family: "Open Sans", sans-serif;
+  background: #8a262b;
+
+}
+.body-homemm{
+  font-family: "Open Sans", sans-serif;
+  background: #e39d57;
+
+}
+.body-index{
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  background: url(https://cronicasdelsur.com/wp-content/uploads/2020/05/Jujuy_Humahuaca_Hornocal.jpg) 50% fixed;
+  background-size: cover;
+}
+
+.body-reg{
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  background:white;
+  background-size: cover;
+}
+.login-box {
+  height: auto;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  max-width: 38em;
+  padding: 1em 3em 2em 3em;
+  margin: 0em auto;
+  box-shadow: 2px 3px 10px 15px rgba(85,0,0,0.5);
+  background-color: rgb(248 249 249 / 4%);
+}
+.poi-box{
+text-align:center;
+}
+.login-box h1 {
+  color: #000;
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.login-box label {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+}
+
+.login-box input {
+  width: 100%;
+  margin-bottom: 20px;
+  color:white;
+}
+
+.login-box input[type="text"], .login-box input[type="password"], .login-box input[type="email"]{
+  border: none;
+  border-bottom: 1px solid #000;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #000;
+  font-size: 16px;
+}
+
+.login-box input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background:#fd7354;
+  color: #000;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.login-box input[type="submit"]:hover {
+  cursor: pointer;
+  background: #fd947c;
+  color: #000;
+}
+
+.login-box select{
+  border: none;
+  border-bottom: 1px solid #000;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #000;
+  font-size: 16px;
+}
+
+.login-box a {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  color: black;
+}
+
+.login-box a:hover {
+  color: #000;
+}
+
+.button {
+	background: #3B5998;
+	color:#fff;
+	display:inline-block;
+	font-size:2em;
+	margin:20px;
+	padding:10px 0;
+	text-align:center;
+	width:200px;
+	text-decoration:none;
+}
+
+.button2 {
+	background: #DB4437;
+	color:#fff;
+	display:inline-block;
+	font-size:2em;
+	margin:20px;
+	padding:10px 0;
+	text-align:center;
+	width:200px;
+	text-decoration:none;
+}
+
+.button span {
+	  background: #fff;
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
+      margin: 0 10px 0 0;
+      line-height: 24px;
+      text-align: center;
+	  margin-right:5px;
+}
+
+.button2 span {
+	  background: #fff;
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
+      margin: 0 10px 0 0;
+      line-height: 24px;
+      text-align: center;
+	  margin-right:5px;
+}
+.formulario{
+	margin-top:0%;
+	margin-bottom:0%;
+	
+}
+.reg-box {
+  height: auto;
+  top: 95%;
+  left: 50%;
+  
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+    max-width: 38em;
+  padding: 1em 3em 2em 3em;
+  margin: 0em auto;
+  box-shadow: 2px 3px 10px 15px rgba(85,0,0,0.5);
+  background-color: rgb(248 249 249 / 4%);
+  
+}
+.pe{
+	font:bold 19px sans-serif;
+	font-style: oblique;
+}
+.reg-box h1 {
+  color: #000;
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.reg-box label {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+}
+
+.reg-box input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.reg-box input[type="text"], .reg-box input[type="password"], .reg-box input[type="email"], .reg-box input[type="number"]{
+  border: none;
+  border-bottom: 1px solid #000;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #000;
+  font-size: 16px;
+}
+
+.reg-box input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background:#fd7354;
+  color: #000;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.reg-box input[type="submit"]:hover {
+  cursor: pointer;
+  background: #fd947c;
+  color: #000;
+}
+
+.reg-box select{
+  border: none;
+  border-bottom: 1px solid #000;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #000;
+  font-size: 16px;
+}
+
+.reg-box a {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  color: black;
+}
+
+.reg-box a:hover {
+  color: #000;
+}
+
+.input2{width:100%;padding:10px;box-sizing:border-box;background:none;outline:none;resize:none;border:0;font-family:'Montserrat',sans-serif;transition:all .3s;border-bottom:2px solid #bebed2}
+.input2:focus{border-bottom:2px solid #78788c}
+.p2{content:attr(type);display:block;margin:28px 0 0;font-size:14px;color:#5a5a5a}
+
+.navbar{
+	background:#3498DB;
+}

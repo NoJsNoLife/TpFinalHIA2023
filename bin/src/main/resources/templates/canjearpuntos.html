@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+	<meta charset="UTF-8">
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/mpoi.css}" />
+	<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/nicoleestilos.css}" />
+</head>
+
+<body class="body-home">
+
+<div th:insert="layouts/header :: header" ></div>
+
+<b class="titulos" id="etiqueta" th:text=" 'usted tiene ' +${puntos} + ' puntos en su cuenta'"><small
+							class="text-muted">etiqueta</small></b>
+
+
+
+
+	<div class="form-group row">
+
+
+		<div id="carta" class=" col-sm-4">
+			<img th:src="@{/img/points/buñuelos.jpg}" class="w-100" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Descuentos en buñuelos Doña rosa</h5>
+				<h7>10 puntos</h7>
+				<p class="card-text">Descuento del 15 % total en la compra del local de "Los buñuelos de Doña Rosa"</p>
+				<a href="#" id="button" class="stretched-link" th:onclick="confirmarCanjear1()">Obtenga su descuento!</a>
+			</div>
+		</div>
+
+
+
+		<div id="carta" class=" col-sm-4">
+			<img th:src="@{/img/points/betos-lomitos.jpg}" class="w-100" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Lomitos Betos</h5>
+				<h7>10 puntos</h7>
+				<p class="card-text">10% en el total de la orden en la sandwicheria lomitos betos</p>
+				<a href="#" id="button" class="stretched-link" th:onclick="confirmarCanjear1()">Obtenga su descuento!</a>
+			</div>
+		</div>
+
+
+
+
+
+
+
+		<div id="carta" class=" col-sm-4">
+			<img th:src="@{/img/points/nose.jpg}" class="w-100" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">15% de descuento en musimundo</h5>
+				<h7>10 puntos</h7>
+				<p class="card-text">cupon para obtener 15 % de descuento en su proxima compra de dispositivos genericos
+				</p>
+				<a href="#" id="button" class="stretched-link" th:onclick="confirmarCanjear1()">Obtenga su descuento!</a>
+			</div>
+		</div>
+
+
+
+
+
+
+	</div>
+	</div>
+
+	<div class="form-group row">
+
+		<div id="carta" class=" col-sm-4">
+			<img th:src="@{/img/points/pepira.jpg}" class="w-100" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Pepira</h5>
+				<h7>20 puntos</h7>
+				<p class="card-text">Una bebida gatis con la compra de tu cena o almuerzo en Pepira (independencia 466)
+				</p>
+				<a href="#" id="button" class="stretched-link" th:onclick="confirmarCanjear2()">Obtenga su descuento!</a>
+			</div>
+		</div>
+
+
+
+		<div id="carta" class=" col-sm-4">
+			<img th:src="@{/img/points/restaurant-viracocha.jpg}" class="w-100" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Viracocha</h5>
+				<h7>20 puntos</h7>
+				<p class="card-text">Postre gratis en su proxima compra en El restaurant viracocha (independencia 994)
+				</p>
+	<a href="#" id="button" class="stretched-link" th:onclick="confirmarCanjear2()">Obtenga su descuento!</a>
+			</div>
+		</div>
+
+
+
+		<div id="carta" class=" col-sm-4 ">
+			<img th:src="@{/img/points/logo-topper-300x130.png}" class="w-100" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Topper</h5>
+				<h7>20 puntos</h7>
+				<p class="card-text">Descuento del 25% en su proxima compra de tpper no mayor a 10.000 pesos</p>
+				<a href="#" id="button" class="stretched-link" th:onclick="confirmarCanjear2()">Obtenga su descuento!</a>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="form-group row">
+
+		<div id="carta" class=" col-sm-4 ">
+			<img th:src="@{/img/points/temis.png}" class="w-100" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">TE misTÉrios</h5>
+				<h7>30 puntos</h7>
+				<p class="card-text">30% en el segundo blend d te artesanal que compre en misTerios</p>
+				<a href="#" id="button" class="stretched-link" th:onclick="confirmarCanjear3()">Obtenga su descuento!</a>
+			</div>
+		</div>
+
+
+		<div id="carta" class=" col-sm-4">
+			<img th:src="@{/img/points/xd.jpg}" class="w-100" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">2x1 en medias deportivas</h5>
+				<h7>30 puntos</h7>
+				<p class="card-text">Cupon valido para un dos por uno en medias deportivas de cualquier marca en woker
+				</p>
+<a href="#" id="button" class="stretched-link" th:onclick="confirmarCanjear3()">Obtenga su descuento!</a>
+			</div>
+		</div>
+
+
+
+		<div id="carta" class=" col-sm-4 ">
+			<img th:src="@{/img/points/104_355837585.jpg}" class="w-100" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">oferta en goyo</h5>
+				<h7>30 puntos</h7>
+				<p class="card-text">disfrute de 10 super panchos para usted y su familia por tan solo 600 pesos con
+					este cupon</p>
+				<a href="#" id="button" class="stretched-link" th:onclick="confirmarCanjear3()">Obtenga su descuento!</a>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--Modal Eliminar-->
+	<div class="modal fade" id="modalcanjear1" tabindex="-1" role="dialog" aria-labelledby="eliminarModal"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="eliminarModalTitulo">Confirmar canjear</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h6>¿Esta segro de canjear este beneficio ?</h6>
+					<h7>(en caso de aceptar le llegara un cupon por mail que debera presentar al vendedor y se descontaran 10 puntos de su cuenta)</h7>
+				</div>
+				<input type="hidden" id="identificadorUsuarioHiddenInput" name="userIdHiddenInput" />
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary" th:onclick="canjear10Puntos()">Si, quiero este
+						descuento</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="modalcanjear2" tabindex="-1" role="dialog" aria-labelledby="eliminarModal"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="canjear2Titulo">Confirmar canjear</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h6>¿Esta segro de canjear este beneficio ?</h6>
+					<h7>(en caso de aceptar le llegara un cupon por mail que debera presentar al vendedor y se descontaran 20 puntos de su cuenta)</h7>
+				</div>
+				<input type="hidden" id="identificadorUsuarioHiddenInput" name="userIdHiddenInput" />
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary" th:onclick="canjear20Puntos()">Si, quiero este
+						descuento</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="modalcanjear3" tabindex="-1" role="dialog" aria-labelledby="eliminarModal"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="eliminarModalTitulo">Confirmar canjear</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h6>¿Esta segro de canjear este beneficio ?</h6>
+					<h7>(en caso de aceptar le llegara un cupon por mail que debera presentar al vendedor y se descontaran 30 puntos de su cuenta)</h7>
+				</div>
+				<input type="hidden" id="identificadorUsuarioHiddenInput" name="userIdHiddenInput" />
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary" th:onclick="canjear30Puntos()">Si, quiero este
+						descuento</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script type="text/javascript">
+		function confirmarCanjear1() {
+			$('#modalcanjear1').modal('show');
+		}
+		function confirmarCanjear2() {
+			$('#modalcanjear2').modal('show');
+			
+		}
+		function confirmarCanjear3() {
+			$('#modalcanjear3').modal('show');
+		}
+
+		function canjear10Puntos() {
+			var id = $("#identificadorUsuarioHiddenInput").val();
+			window.location = "canjear10"
+		}
+
+
+		function canjear20Puntos() {
+			var id = $("#identificadorUsuarioHiddenInput").val();
+			window.location = "canjear20"
+		}
+
+
+		function canjear30Puntos() {
+			var id = $("#identificadorUsuarioHiddenInput").val();
+			window.location = "canjear30"
+		}
+
+
+
+	</script>
+
+
+
+
+
+
+
+	<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript"
+		src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript"
+		src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript"
+		src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

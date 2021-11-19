@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link th:rel="stylesheet" type="text/css" th:href="@{/css/mpoi.css}" />
+<link th:rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+<link th:rel="stylesheet"
+	th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
+<link th:rel="stylesheet" type="text/css"
+	th:href="@{/css/nicoleestilos.css}" />
+<title>Insert title here</title>
+</head>
+<body class="body-home">
+<div th:insert="layouts/header :: header" ></div>		
+<div class="poi-box">
+<form  th:object="${valoracion}" th:action="${editMode}?@{/valoracion/modificar/}:@{'/valoracion/guardar/'+${poiEncontrado.codPoI}}" method="post" enctype="multipart/form-data" >
+	<h1 class="titulos" th:unless="${editMode}">Agregar Valoracion</h1>
+	<h1 class="titulos" th:if="${editMode}">Modificar Valoracion</h1>
+
+
+
+
+								<div class="form-group row">
+									<label for="comentario" class="col-sm-2 col-form-label">Comentario</label>
+
+									<input type="text" id="comentario" th:field="*{comentario}"> <!--  th:if="${editMode}"-->
+									 <div class="alert alert-danger" th:if="${#fields.hasErrors('comentario')}" th:errors="*{comentario}">Error</div>
+									<!-- <textarea type="text" id="comentario" cols="30" rows="1"
+										class="col-form-label"></textarea> -->
+								</div>
+								<div class="form-group row" th:unless="${editMode}">
+
+									<label for="comentario" class="col-sm-3 col-form-label">Puntue
+										este punto de interes</label>
+									<p class="valoracion col-form-label" >
+						
+									 <input id="radio1" type="radio" name="estrellas" value="5" th:field="*{unaValoracion}" >
+   									 <label for="radio1">★</label>
+   									 <input id="radio2" type="radio" name="estrellas" value="4" th:field="*{unaValoracion}" >
+   									 <label for="radio2">★</label>
+    								 <input id="radio3" type="radio" name="estrellas" value="3" th:field="*{unaValoracion}">
+    								 <label for="radio3">★</label>
+    								 <input id="radio4" type="radio" name="estrellas" value="2" th:field="*{unaValoracion}" >
+    								 <label for="radio4">★</label>
+    								 <input id="radio5" type="radio" name="estrellas" value="1" th:field="*{unaValoracion}" >
+    								 <label for="radio5">★</label>
+    								 <div class="alert alert-danger" th:if="${#fields.hasErrors('unaValoracion')}" th:errors="*{unaValoracion}">Error</div>
+									</p>
+								</div>
+								 <input type="submit"id="button" th:value="${editMode}?'Modificar valoracion':'Crear valoracion'">
+							</form>
+							</div>
+</body>
+</html>
