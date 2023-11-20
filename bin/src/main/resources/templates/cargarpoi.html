@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link th:rel="stylesheet" type="text/css" th:href="@{/css/poi.css}" />
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/mpoi.css}" />
 	<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
 	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
 	<link th:rel="stylesheet" type="text/css" th:href="@{/css/nicoleestilos.css}" />
@@ -22,16 +23,16 @@
 
 
 		<div class="form-group row">
-			<label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+			<label for="nombre" class="color col-sm-2 col-form-label">Nombre</label>
 			<input type="text" id="nom" th:field="*{nombre}" class="form-control col-sm-2">
 			<div class="alert alert-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error</div>
 		</div>
 		<div class="form-group row">
-			<label for="sitw" class="col-sm-2 col-form-label">Sitio Web</label>
+			<label for="sitw" class="color col-sm-2 col-form-label">Sitio Web</label>
 			<input type="url" id="sitw" th:field="*{sitio_web}" class="form-control col-sm-2">
 		</div>
 		<div class="form-group row">
-			<label for="descrip" class="col-sm-2 col-form-label">Descripcion</label>
+			<label for="descrip" class="color col-sm-2 col-form-label">Descripcion</label>
 			<textarea type="text" id="descrip" th:field="*{descripcion}" cols="50" rows="5"
 				class="col-form-label"></textarea>
 				<div class="alert alert-danger" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}">Error</div>
@@ -40,7 +41,7 @@
 
 		<div class="form-group row">
 			<label for="file" class="col-sm-2 col-form-label">
-				<i class="fas fa-file-image"></i>Subir Imagen</label>
+				<i class="color fas fa-file-image"></i>Subir Imagen</label>
 			<div class="col-sm-4">
 				<input type="file" name="file" class="form-control-file" id="file"
 					accept="image/x-png,image/gif,image/jpeg,image/png,image/jpeg" onchange="loadFile(event)">
@@ -51,7 +52,7 @@
 		</div>
 		<div class="form-group row">
 			<label for="file1" class="col-sm-2 col-form-label">
-				<i class="fas fa-file-image"></i>Subir Imagen 2</label>
+				<i class=" color fas fa-file-image"></i>Subir Imagen 2</label>
 			<div class="col-sm-4">
 				<input type="file" name="file1" class="form-control-file" id="file1"
 					accept="image/x-png,image/gif,image/jpeg,image/png,image/jpeg" onchange="loadFile1(event)">
@@ -61,7 +62,7 @@
 		
 		<div class="form-group row">
 			<label for="file2" class="col-sm-2 col-form-label">
-				<i class="fas fa-file-image"></i>Subir Imagen 3 </label>
+				<i class=" fas fa-file-image color"></i>Subir Imagen 3 </label>
 			<div class="col-sm-4">
 				<input type="file" name="file2" class="form-control-file" id="file2"
 					accept="image/x-png,image/gif,image/jpeg,image/png,image/jpeg" onchange="loadFile2(event)">
@@ -75,7 +76,7 @@
 
 
 		<div class="form-group row">
-			<label for="etiqueta" class="col-sm-2 col-form-label">Etiquetas</label>
+			<label for="etiqueta" class="color col-sm-2 col-form-label">Etiquetas</label>
 			<select id="tipo" th:field="*{etiqueta}">
 				<option value="cultura">cultura</option>
 				<option value="naturaleza ">naturaleza</option>
@@ -87,7 +88,7 @@
 		</div>
 
 		<div class="accordion" id="accordionExample">
-			<a class=" ub btn btn-primary " data-toggle="collapse" href="#multiCollapseExample1" role="button"
+			<a class=" ub btn " id="button" data-toggle="collapse" href="#multiCollapseExample1" role="button"
 				aria-expanded="true" aria-controls="multiCollapseExample1">Ubicacion</a>
 			<div class="collapse multi-collapse acor" id="multiCollapseExample1">
 				<div class="form-group row acor">
@@ -154,7 +155,7 @@
 			</div>
 		</div>
 		<div>
-			<input type="submit" th:value="${editMode}?'Modificar Cliente':'Crear poi'">
+			<input  class=" ub btn " id="button" type="submit" th:value="${editMode}?'Modificar Cliente':'Crear poi'">
 		</div>
 
 

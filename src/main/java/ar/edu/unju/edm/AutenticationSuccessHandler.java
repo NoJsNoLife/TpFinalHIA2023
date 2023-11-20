@@ -51,7 +51,7 @@ public class AutenticationSuccessHandler implements AuthenticationSuccessHandler
 				redirectStrategy.sendRedirect(request, response, "/consultor");
 			} else {
 				if (userRegistrador) {
-					redirectStrategy.sendRedirect(request, response, "/registrador");
+					redirectStrategy.sendRedirect(request, response, "/turista/perfiles");
 				} else {
 					throw new IllegalStateException();
 				}

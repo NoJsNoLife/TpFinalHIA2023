@@ -1,6 +1,6 @@
 .body-home{
   font-family: "Open Sans", sans-serif;
-  background: -webkit-linear-gradient(#8a262b, #e39d57);
+  background: #8a262b;
 
 }
 .body-homem{
@@ -99,7 +99,9 @@ text-align:center;
   color: #000;
   font-size: 16px;
 }
-
+.www{
+	padding-top:15%;
+}
 .login-box a {
   text-decoration: none;
   font-size: 12px;

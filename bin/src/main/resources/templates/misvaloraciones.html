@@ -51,7 +51,7 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
 					
-					<button type="button" class="btn btn-primary" th:onclick="eliminarpoi()">Eliminar Poi</button>
+					<button type="button" class="btn btn-primary" th:onclick="eliminarval()">Eliminar Valoracion</button>
 				</div>
 			</div>
 		</div>
@@ -65,7 +65,7 @@
 			$("#identificadorUsuarioHiddenInput").val(idValoracion);
 		}
 
-		function eliminarpoi() {
+		function eliminarval() {
 			var idValoracion = $("#identificadorUsuarioHiddenInput").val();
 			window.location = "/valoracion/eliminar/" + idValoracion;
 		}

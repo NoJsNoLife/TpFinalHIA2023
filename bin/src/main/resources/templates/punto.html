@@ -57,25 +57,25 @@
 						<a class=" ub btn " id="button" data-toggle="collapse"
 							href="#multiCollapseExample1" role="button" aria-expanded="true"
 							aria-controls="multiCollapseExample1">Ver Ubicacion</a>
-						<div class="collapse multi-collapse acor"
+						<ul class="collapse multi-collapse acor"
 							id="multiCollapseExample1">
 
-							<p class="card-text"
-								th:text="'Longitud ' +${p.localizacionLongitud}">long</p>
-							<p class="card-text"
-								th:text=" 'Latitud ' +${p.localizacionLatitud}">lat</p>
-							<p class="card-text" th:text="'Barrio ' +${p.barrio}">barrio</p>
-							<p class="card-text"
-								th:text="'calle ' +${p.localizacionLongitud}">calle</p>
-							<p class="card-text"
-								th:text=" 'Nº de casa ' +${p.localizacionLatitud}">cas</p>
-							<p class="card-text" th:text="'Localidad ' +${p.barrio}">loc</p>
+							<li class="card-text"
+								th:text="'  Longitud:' +${p.localizacionLongitud}">long</li>
+							<li class="card-text"
+								th:text=" '  Latitud:' +${p.localizacionLatitud}">lat</li>
+							<li class="card-text" th:text="'  Barrio:' +${p.barrio}">barrio</li>
+							<li class="card-text"
+								th:text="'  calle:' +${p.localizacionLongitud}">calle</li>
+							<li class="card-text"
+								th:text=" '  Nº de casa:' +${p.localizacionLatitud}">cas</li>
+							<li class="card-text" th:text="'  Localidad:' +${p.barrio}">loc</li>
 
-						</div>
+						</ul>
 						
 					</div>
 		
-					<p class="card-text etiqueta" id="etiqueta"
+					<p class="card-text etiqueta fas fa-feather" id="etiqueta"
 						th:text="${p.etiqueta}">
 						<small class="text-muted">etiqueta</small>
 						

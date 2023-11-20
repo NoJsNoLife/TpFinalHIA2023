@@ -13,18 +13,20 @@
 <body class="body-home">
 
 <div th:insert="layouts/header :: header" ></div>
-
-<b class="titulos" id="etiqueta" th:text=" 'usted tiene ' +${puntos} + ' puntos en su cuenta'"><small
+<div class="titulos">
+<b  id="etiqueta" th:text=" 'usted tiene ' +${puntos} + ' puntos en su cuenta'"><small
 							class="text-muted">etiqueta</small></b>
 
 
-
+</div>
 
 	<div class="form-group row">
 
 
 		<div id="carta" class=" col-sm-4">
+			<div class="imagenes">
 			<img th:src="@{/img/points/buñuelos.jpg}" class="w-100" alt="...">
+			</div>
 			<div class="card-body">
 				<h5 class="card-title">Descuentos en buñuelos Doña rosa</h5>
 				<h7>10 puntos</h7>
@@ -36,7 +38,9 @@
 
 
 		<div id="carta" class=" col-sm-4">
+		<div class="imagenes">
 			<img th:src="@{/img/points/betos-lomitos.jpg}" class="w-100" alt="...">
+			</div>
 			<div class="card-body">
 				<h5 class="card-title">Lomitos Betos</h5>
 				<h7>10 puntos</h7>
@@ -52,7 +56,9 @@
 
 
 		<div id="carta" class=" col-sm-4">
+		<div class="imagenes">
 			<img th:src="@{/img/points/nose.jpg}" class="w-100" alt="...">
+			</div>
 			<div class="card-body">
 				<h5 class="card-title">15% de descuento en musimundo</h5>
 				<h7>10 puntos</h7>
@@ -73,7 +79,9 @@
 	<div class="form-group row">
 
 		<div id="carta" class=" col-sm-4">
+		<div class="imagenes">
 			<img th:src="@{/img/points/pepira.jpg}" class="w-100" alt="...">
+			</div>
 			<div class="card-body">
 				<h5 class="card-title">Pepira</h5>
 				<h7>20 puntos</h7>
@@ -86,7 +94,9 @@
 
 
 		<div id="carta" class=" col-sm-4">
+		<div class="imagenes">
 			<img th:src="@{/img/points/restaurant-viracocha.jpg}" class="w-100" alt="...">
+			</div>
 			<div class="card-body">
 				<h5 class="card-title">Viracocha</h5>
 				<h7>20 puntos</h7>
@@ -99,7 +109,9 @@
 
 
 		<div id="carta" class=" col-sm-4 ">
+		<div class="imagenes">
 			<img th:src="@{/img/points/logo-topper-300x130.png}" class="w-100" alt="...">
+			</div>
 			<div class="card-body">
 				<h5 class="card-title">Topper</h5>
 				<h7>20 puntos</h7>
@@ -123,7 +135,9 @@
 	<div class="form-group row">
 
 		<div id="carta" class=" col-sm-4 ">
+		<div class="imagenes">
 			<img th:src="@{/img/points/temis.png}" class="w-100" alt="...">
+			</div>
 			<div class="card-body">
 				<h5 class="card-title">TE misTÉrios</h5>
 				<h7>30 puntos</h7>
@@ -134,7 +148,9 @@
 
 
 		<div id="carta" class=" col-sm-4">
+		<div class="imagenes">
 			<img th:src="@{/img/points/xd.jpg}" class="w-100" alt="...">
+			</div>
 			<div class="card-body">
 				<h5 class="card-title">2x1 en medias deportivas</h5>
 				<h7>30 puntos</h7>
@@ -147,7 +163,9 @@
 
 
 		<div id="carta" class=" col-sm-4 ">
+		<div class="imagenes">
 			<img th:src="@{/img/points/104_355837585.jpg}" class="w-100" alt="...">
+			</div>
 			<div class="card-body">
 				<h5 class="card-title">oferta en goyo</h5>
 				<h7>30 puntos</h7>

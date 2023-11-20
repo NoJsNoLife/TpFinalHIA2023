@@ -27,21 +27,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
-		http
-			.authorizeRequests()
-				.antMatchers(resources).permitAll()
-				.antMatchers("/","/index","/turista/mostrar","/turista/guardar","/mensaje/error/turi").permitAll()
-			.anyRequest().authenticated()
-				.and().formLogin()				
-				.loginPage("/login").permitAll()
-				.successHandler(autenticacion)
-				//.defaultSuccessUrl("/home")
-				.failureUrl("/login?error=true")
-				.usernameParameter("correo")
-				.passwordParameter("password")
-				.and()
-			    .logout().permitAll();
-		http.csrf().disable();
+        http
+                .authorizeRequests(requests -> requests
+                        .antMatchers(resources).permitAll()
+                        .antMatchers("/", "/index", "/turista/mostrar", "/turista/guardar", "/mensaje/error/turi").permitAll()
+                        .anyRequest().authenticated()).formLogin(login -> login
+                .loginPage("/login").permitAll()
+                .successHandler(autenticacion)
+                //.defaultSuccessUrl("/home")
+                .failureUrl("/login?error=true")
+                .usernameParameter("correo")
+                .passwordParameter("password"))
+                .logout(logout -> logout.permitAll());
+        http.csrf(csrf -> csrf.disable());
 }
 
 

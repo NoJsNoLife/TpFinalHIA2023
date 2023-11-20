@@ -174,7 +174,11 @@ public String eliminarPoI(Model model, @PathVariable(name ="codPoI")Integer codP
 		return "redirect:/mis/pois";
 	}
 	
-	
+	/*@GetMapping("/mis/pois")
+	public String cargarPois(Model model){
+		model.addAttribute("pois", poiService.obtenerTodosPoIs());
+		return("mispoiss");
+	}*/
 	@GetMapping("/mis/pois")
 	public String cargarMisPoIs(Model model) {		
 

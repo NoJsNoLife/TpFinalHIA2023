@@ -3,7 +3,7 @@
 	height: 180;
 }
 .bodym{
-		background: #50809D;
+		background: white;
 		text-align: center;
 
 }
@@ -20,7 +20,7 @@
     padding-top:5%;
     padding-bottom:5%;
     border:3px solid black;
-    background: -webkit-linear-gradient(#8a262b, #e39d57);
+    background: -webkit-linear-gradient(#777777, #3f3f3f);
     
     
 }
@@ -70,7 +70,7 @@
 	font-family: Century Gothic;
 	text-align:center;
 	font-size:300%;    
-	color: #341904;    
+	color: white;    
 }
 .etiqueta{
 	text-align:center;
@@ -91,8 +91,8 @@
 	margin: 10px;
 	padding: 10px 24px;
 	font-size: 16px;
-		color:#341904;
-	background: -webkit-linear-gradient( #8a262b,#e39d57,#8a262b);
+		color:rgb(0, 0, 0);
+	background: #737373;
 		justify-content:left;
 		text-align: left;
 
