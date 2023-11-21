@@ -12,7 +12,7 @@
 }
 #carta{
 	background: #f8f9fa5e;
-    color: #030404;
+    color: rgb(255, 255, 255);
     font-family: Vegur, 'PT Sans', Verdana, sans-serif;
     background-size: cover;
     padding-right: 5%;
@@ -75,13 +75,16 @@
 .etiqueta{
 	text-align:center;
 	 text-transform: uppercase;
+	 color: white;
 	 
 }
 .link{
 	font-size:50%;
+	color: white;
 }
 .descripcion{
 	border:1px solid black;
+	color: white;
 }
 .titulos b{
 	
@@ -91,7 +94,7 @@
 	margin: 10px;
 	padding: 10px 24px;
 	font-size: 16px;
-		color:rgb(0, 0, 0);
+		color:white;
 	background: #737373;
 		justify-content:left;
 		text-align: left;

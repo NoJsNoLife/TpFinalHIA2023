@@ -1,11 +1,11 @@
 .body-home{
   font-family: "Open Sans", sans-serif;
-  background: #8a262b;
+  background: white;
 
 }
 .body-homem{
   font-family: "Open Sans", sans-serif;
-  background: #8a262b;
+  background: white;
 
 }
 .body-homemm{
@@ -78,7 +78,7 @@ text-align:center;
   border: none;
   outline: none;
   height: 40px;
-  background:#fd7354;
+  background:#737373;
   color: #000;
   font-size: 18px;
   border-radius: 20px;
@@ -164,19 +164,18 @@ text-align:center;
 	
 }
 .reg-box {
-  height: auto;
-  top: 95%;
-  left: 50%;
-  
-  position: absolute;
-  transform: translate(-50%, -50%);
-  box-sizing: border-box;
-  padding: 70px 30px;
+ height: auto;
+    top: 541px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    /* box-sizing: border-box; */
+    /* padding: 70px 30px; */
     max-width: 38em;
-  padding: 1em 3em 2em 3em;
-  margin: 0em auto;
-  box-shadow: 2px 3px 10px 15px rgba(85,0,0,0.5);
-  background-color: rgb(248 249 249 / 4%);
+    padding: 1em 3em 2em 3em;
+    margin: 0em auto;
+    box-shadow: 2px 3px 10px 15px rgb(35 35 35 / 50%);
+    background-color: rgb(122 127 127 / 85%);
   
 }
 .pe{
@@ -217,7 +216,7 @@ text-align:center;
   border: none;
   outline: none;
   height: 40px;
-  background:#fd7354;
+  background: #434343;
   color: #000;
   font-size: 18px;
   border-radius: 20px;
