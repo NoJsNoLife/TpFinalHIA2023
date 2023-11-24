@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ar.edu.unju.edm</groupId>
-	<artifactId>demo01</artifactId>
+	<artifactId>grupo01_HIA_TPFinal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>TrabajoPracticoFinalCoroGimenezRochaCancinos</name>
-	<description>trabajo practico n4 bien echo</description>
+	<name>TP Final HIA 2023</name>
+	<description>tp final hia 2023</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
