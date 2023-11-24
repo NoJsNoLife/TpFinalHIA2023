@@ -8,3 +8,4 @@ RUN mvn -e -B -DskipTests package
 FROM openjdk:17-alpine
 COPY --from=builder /app/target/grupo01_HIA_TPFinal-0.0.1-SNAPSHOT.jar /
 CMD ["java", "-jar", "/grupo01_HIA_TPFinal-0.0.1-SNAPSHOT.jar"]
+EXPOSE 8080
